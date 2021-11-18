@@ -87,25 +87,25 @@ function smallerName(books) {
 
 //3 - Encontre o primeiro livro cujo nome possui 26 caracteres. 
 function getNamedBook(books) {
-    return books.find(book => book.name.length === 26)
+    return books.find(book => book.name.length === 26);
 }
 
 //4 - Ordene os livros por data de lançamento em ordem decrescente. 
 function booksOrderedByReleaseYearDesc(books) {
-    return books.sort((firstbook, secondbook) => secondbook.releaseYear - firstbook.releaseYear)
+    return books.sort((firstbook, secondbook) => secondbook.releaseYear - firstbook.releaseYear);
 }
 
 //5 - Faça uma função que retorne true , se todas as pessoas autoras nasceram no século XX, ou false , caso contrário. 
-function everyoneWasBornOnSecXX() {
-    // escreva seu código aqui
-  }
+function everyoneWasBornOnSecXX(books) {
+    return books.every(book => book.author.birthYear > 1900 && book.author.birthYear < 2000);
+}
 
-  // 6 - Faça uma função que retorne true , se algum livro foi lançado na década de 80, e false , caso contrário. 
-  function someBookWasReleaseOnThe80s() {
-    // escreva seu código aqui
-  }
+// 6 - Faça uma função que retorne true , se algum livro foi lançado na década de 80, e false , caso contrário. 
+function someBookWasReleaseOnThe80s(books) {
+    return books.some(book => book.releaseYear >= 1980 && book.releaseYear < 1990);
+}
 
-  // 7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário. 
-  function authorUnique() {
-    // escreva seu código aqui
-  }
+// 7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário. 
+function authorUnique() {
+    
+}
