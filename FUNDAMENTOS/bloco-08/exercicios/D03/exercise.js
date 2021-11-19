@@ -82,13 +82,15 @@ function nameAndAge(books) {
 }
 
 //3 - Crie um array com todos os objetos que possuem gênero ficção científica ou fantasia. 
-function fantasyOrScienceFiction() {
-    // escreva seu código aqui
+function fantasyOrScienceFiction(books) {
+    const result = books.filter(book => book.genre === 'Ficção Científica' || book.genre === 'Fantasia');
+    return result;
 }
 
 // 4 - Crie um array ordenado pelos livros com mais de 60 anos de publicação e ordene-o pelo livro mais velho. 
-function oldBooksOrdered() {
-    // escreva seu código aqui
+function oldBooksOrdered(books) {
+    const result = books.filter(book => 2021 - book.releaseYear > 60).sort((bookA, bookB) => bookA.releaseYear - bookB.releaseYear);
+    return result;
 }
 
 // 5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia. 
@@ -106,4 +108,4 @@ function authorWith3DotsOnName() {
     // escreva seu código aqui
 }
 
-console.log(nameAndAge(books));
+console.log(oldBooksOrdered(books));
