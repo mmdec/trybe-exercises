@@ -95,17 +95,19 @@ function oldBooksOrdered(books) {
 
 // 5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia. 
 function fantasyOrScienceFictionAuthors() {
-    // escreva seu código aqui
+    const result = books.filter(book => book.genre === 'Ficção Científica' || book.genre === 'Fantasia').map(book => book.author.name).sort();
+    return result;
 }
 
 // 6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação. 
 function oldBooks() {
-    // escreva seu código aqui
-}
+    const result = books.filter(book => 2021 - book.releaseYear > 60).map(book => book.name);
+    return result;}
 
 // 7 - Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais. 
-function authorWith3DotsOnName() {
-    // escreva seu código aqui
+function authorWith3DotsOnName(books) {
+    const result = books.find((book) => (
+        book.author.name.split(' ').filter((word) => word.endsWith('.')).length === 3
+      )).name;
+    return result;
 }
-
-console.log(oldBooksOrdered(books));
